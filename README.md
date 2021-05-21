@@ -21,3 +21,10 @@ FLASK_APP=hello.py FLASK_ENV=development flask run --host=0.0.0.0
 mkdir -p ~/tmp/raspi-fs
 sshfs <raspi-ip>: ~/tmp/raspi-fs
 ```
+
+## Install service mystrom-backend
+
+```sh
+sudo cp mystrom-backend.service /etc/systemd/system/
+sudo systemctl enable mystrom-backend
+```

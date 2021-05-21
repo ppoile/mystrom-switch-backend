@@ -1,0 +1,12 @@
+[Unit]
+Description=mystrom switch backend
+After=network.target
+
+[Service]
+User=pi
+WorkingDirectory=/home/pi/var/mystrom-backend
+ExecStart=/home/pi/var/mystrom-backend/venv/bin/gunicorn -b 0.0.0.0:5000 -w 4 hello:app
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
