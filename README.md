@@ -25,6 +25,5 @@ sshfs <raspi-ip>: ~/tmp/raspi-fs
 ## Install service mystrom-backend
 
 ```sh
-sudo cp mystrom-backend.service /etc/systemd/system/
-sudo systemctl enable mystrom-backend
+sudo ./install.sh
 ```

@@ -4,8 +4,8 @@ After=network.target
 
 [Service]
 User=pi
-WorkingDirectory=/home/pi/var/mystrom-backend
-ExecStart=/home/pi/var/mystrom-backend/venv/bin/gunicorn -b 0.0.0.0:5000 -w 4 hello:app
+WorkingDirectory=__BASEDIR__
+ExecStart=__BASEDIR__/venv/bin/gunicorn -b 0.0.0.0:5000 -w 4 hello:app
 Restart=always
 
 [Install]
