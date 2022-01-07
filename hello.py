@@ -33,7 +33,13 @@ mystrom_switch_base_url = 'http://192.168.0.32/'
 @app.route('/')
 def index():
     app.logger.info('index')
-    return 'Index Page'
+    return '''<h1>Index Page</h1>
+<p><a href="/hello">Get hello message</a></p>
+<p><a href="/switch-status">Get switch status</a></p>
+<p><a href="/switch-on">Switch on (with auto-switch-off)</a></p>
+<p><a href="/switch-off">Switch off</a></p>
+<p><a href="/switch-toggle">Toggle switch (with auto-switch-off)</a></p>
+'''
 
 @app.route('/hello')
 def hello():
