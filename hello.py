@@ -38,7 +38,7 @@ def hello():
 
 @app.route('/switch-status')
 def status():
-    app.logger.info('status...')
+    app.logger.debug('status...')
     response_content = requests.get(mystrom_switch_base_url + 'report').content
     app.logger.info('status: {}'.format(response_content))
     return response_content
@@ -55,7 +55,7 @@ def switch_off():
 
 @app.route('/switch-toggle')
 def switch_toggle():
-    app.logger.info('switch toggle...')
+    app.logger.debug('switch toggle...')
     response_content = requests.get(mystrom_switch_base_url + 'toggle').content
     app.logger.info('switch-toggle: {}'.format(response_content))
     return response_content
