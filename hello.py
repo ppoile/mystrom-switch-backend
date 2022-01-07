@@ -66,7 +66,7 @@ def index():
 @app.route('/hello')
 def hello():
     app.logger.info('hello')
-    return 'Hello, World'
+    return 'Hello, world.'
 
 @app.route('/switch-status')
 def status():
