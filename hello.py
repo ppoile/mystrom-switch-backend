@@ -58,6 +58,7 @@ def index():
     return '''<h1>Index Page</h1>
 <p><a href="/hello">Get hello message</a></p>
 <p><a href="/switch-status">Get switch status</a></p>
+<p><a href="/switch-on_no-auto-off">Switch on (without auto-switch-off)</a></p>
 <p><a href="/switch-on">Switch on (with auto-switch-off)</a></p>
 <p><a href="/switch-off">Switch off</a></p>
 <p><a href="/switch-toggle">Toggle switch (with auto-switch-off)</a></p>
@@ -81,6 +82,11 @@ def switch_on():
     retval = requests.get(MYSTROM_SWITCH_BASE_URL + 'relay?state=1').content
     start_auto_off_timer()
     return retval
+
+@app.route('/switch-on_no-auto-off')
+def switch_on_no_auto_off():
+    app.logger.info('switch on (no-auto-off)')
+    return requests.get(MYSTROM_SWITCH_BASE_URL + 'relay?state=1').content
 
 @app.route('/switch-off')
 def switch_off():
