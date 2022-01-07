@@ -24,7 +24,7 @@ dictConfig({
 app = Flask(__name__)
 cors = CORS(app)
 
-mystrom_switch_base_url = 'http://192.168.0.50/'
+mystrom_switch_base_url = 'http://192.168.0.32/'
 
 @app.route('/')
 def index():
